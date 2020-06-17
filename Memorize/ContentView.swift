@@ -16,7 +16,7 @@ struct ContentView: View {
         })
         })
             .padding()
-            .foregroundColor(Color.blue)
+            .foregroundColor(Color.orange)
             .font(Font.largeTitle)
     }
 }
