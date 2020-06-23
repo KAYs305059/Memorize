@@ -8,13 +8,21 @@
 
 import SwiftUI
 
-class EmojiMemoryGame{
-    private(set) var memoryGame: MemoryGame<String>
+class EmojiMemoryGame {
+    private var memoryGame: MemoryGame<String> = createMemoryGame()
     
-    // MARK: - Action to the Model
+    static func createMemoryGame() -> MemoryGame<String> {
+        let emojis: Array<String> = ["👻","🎃"]
+        return MemoryGame<String>(numberOfPairsOfCards: 2) { pairIndex in
+            return emojis[pairIndex]
+        }
+
+    }
+    
+    // MARK: - Access to the Model
 
     var cards: Array<MemoryGame<String>.Card> {
-        return memoryGame.cards
+         memoryGame.cards
     }
     
     
